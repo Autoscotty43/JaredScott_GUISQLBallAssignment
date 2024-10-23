@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.example.m03_bounce.BouncingBallView
+        android:id="@+id/custView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:circleColor="#ff0099"
+        custom:circleLabel="Hello"
+        custom:labelColor="#ffff66"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.0"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.002" />
+
+    <Button
+        android:id="@+id/button_russ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="168dp"
+        android:fontFamily="serif"
+        android:onClick="onJaredButtonClick"
+        android:text="Add Balls"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toStartOf="@+id/button_clear"
+        custom:layout_constraintHorizontal_bias="1.0"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.944" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="86dp"
+        android:layout_height="50dp"
+        android:fontFamily="serif"
+        android:onClick="onClearButtonClick"
+        android:text="Clear"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.953"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.944" />
+
+    <TextView
+        android:id="@+id/textView_X"
+        android:layout_width="83dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="serif"
+        android:text="X="
+        android:textColor="#442878"
+        custom:layout_constraintBottom_toTopOf="@+id/textView_Y"
+        custom:layout_constraintEnd_toEndOf="@+id/textView_Y"
+        custom:layout_constraintHorizontal_bias="0.0"
+        custom:layout_constraintStart_toStartOf="@+id/textView_Y" />
+
+    <SeekBar
+        android:id="@+id/seekBar_Color"
+        android:layout_width="168dp"
+        android:layout_height="34dp"
+        android:max="765"
+        android:progress="1"
+        android:progressTint="#442878"
+        android:thumbTint="#442878"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="@+id/seekBar_X"
+        custom:layout_constraintHorizontal_bias="1.0"
+        custom:layout_constraintStart_toEndOf="@+id/textView_X"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.622" />
+
+    <SeekBar
+        android:id="@+id/seekBar_X"
+        android:layout_width="168dp"
+        android:layout_height="32dp"
+        android:max="100"
+        android:progress="1"
+        android:progressTint="#442878"
+        android:thumbTint="#442878"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="@+id/seekBar_DY"
+        custom:layout_constraintHorizontal_bias="0.333"
+        custom:layout_constraintStart_toEndOf="@+id/textView_Y"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.675" />
+
+    <TextView
+        android:id="@+id/textView_Y"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="4dp"
+        android:text="Y="
+        android:textColor="#442878"
+        custom:layout_constraintBottom_toTopOf="@+id/textView_DX"
+        custom:layout_constraintEnd_toEndOf="@+id/textView_DX"
+        custom:layout_constraintHorizontal_bias="0.0"
+        custom:layout_constraintStart_toStartOf="@+id/textView_DX" />
+
+    <SeekBar
+        android:id="@+id/seekBar_DY"
+        android:layout_width="166dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:max="100"
+        android:progress="1"
+        android:progressTint="#442878"
+        android:thumbTint="#442878"
+        custom:layout_constraintBottom_toTopOf="@+id/seekBar_DX"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.465"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/seekBar_X" />
+
+    <TextView
+        android:id="@+id/textView_DX"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="serif"
+        android:text="DX="
+        android:textColor="#442878"
+        custom:layout_constraintBottom_toTopOf="@+id/textView_DY"
+        custom:layout_constraintEnd_toEndOf="@+id/textView_DY"
+        custom:layout_constraintHorizontal_bias="0.0"
+        custom:layout_constraintStart_toStartOf="@+id/textView_DY" />
+
+    <TextView
+        android:id="@+id/textView_DY"
+        android:layout_width="85dp"
+        android:layout_height="34dp"
+        android:fontFamily="serif"
+        android:text="DY="
+        android:textColor="#442878"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.095"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.839" />
+
+    <View
+        android:id="@+id/colorView"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:background="@android:color/white"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.773"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.622" />
+
+    <SeekBar
+        android:id="@+id/seekBar_DX"
+        android:layout_width="161dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="4dp"
+        android:max="100"
+        android:progress="1"
+        android:progressTint="#442878"
+        android:thumbTint="#442878"
+        custom:layout_constraintBottom_toTopOf="@+id/seekBar_Y"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.472"
+        custom:layout_constraintStart_toStartOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar_Y"
+        android:layout_width="164dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="112dp"
+        android:max="100"
+        android:progress="1"
+        android:progressTint="#442878"
+        android:thumbTint="#442878"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.469"
+        custom:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Color"
+        android:layout_width="83dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="408dp"
+        android:fontFamily="serif"
+        android:text="Color="
+        android:textColor="#442878"
+        custom:layout_constraintBottom_toTopOf="@+id/textView_X"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.094"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.833" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
